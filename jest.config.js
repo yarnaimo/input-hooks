@@ -4,7 +4,7 @@ module.exports = {
   coveragePathIgnorePatterns: ['/__tests__/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFilesAfterEnv: ['./jest.setup.js'],
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   testRegex: '((\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   transform: {
@@ -12,6 +12,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '^~/(.+)': '<rootDir>/src/$1',
+    '\\.css$': 'identity-obj-proxy',
   },
   globals: {
     'ts-jest': {
